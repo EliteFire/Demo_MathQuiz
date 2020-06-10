@@ -3,12 +3,12 @@
 // Purpose:   Framework of question and used to create the question that is used
 //            by both student and teacher GUI (Demo Only)
 // Author:    Christopher Morley & Rik Reyes
-// Version:   1.1
+// Version:   1.2
 // Date:	   10-June-2020	   
 /**********************************************************/
 package mathquiz;
 
-public class Demo_Question implements Comparable <MathQuiz_Questions>
+public class Demo_Question implements Comparable <Demo_Question>
 {
     private int answer;
     private int leftOperand;
@@ -42,9 +42,12 @@ public class Demo_Question implements Comparable <MathQuiz_Questions>
     @Override
      public String toString()
      {
-         return"";
+         // Question format
+         return answer + "(" + leftOperand + " " + operator + " " + rightOperand + ")";
      }
-     public int compareTo(MathQuiz_Questions obj)
+     
+     // return integer values 0, -1 or 1
+     public int compareTo (Demo_Question obj)
      {
          if(this.answer < obj.answer)
             {
